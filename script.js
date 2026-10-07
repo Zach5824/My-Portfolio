@@ -122,15 +122,20 @@
       });
     }
 
-        // Repository links. Replace any value with the exact repo URL, e.g. GH + '/Studio-Manager'
-    const GH = 'https://github.com/Zach5824';
     const REPOS = {
-      'studio-manager': GH + '?tab=repositories',
-      'mood-music': GH + '?tab=repositories',
-      'weather-alert': GH + '?tab=repositories',
-      'cinema-system': GH + '?tab=repositories',
-      'type-experiments': GH + '?tab=repositories'
+      'studio-manager': 'https://github.com/Zach5824/Studio-Manager/tree/main',
+      'task-manager': 'https://github.com/Zach5824/task-manager/tree/main',
+      'cinema-system': 'https://github.com/Zach5824/movie-theatre-system/tree/main',
+      vetty: 'https://github.com/Zach5824/VETTY/tree/main',
+      'mood-music': 'https://github.com/Zach5824/MOOSIC/tree/master'
     };
+
+    function openRepository(projectId) {
+      const repository = REPOS[projectId];
+      if (repository) {
+        window.location.assign(repository);
+      }
+    }
 
     // Case Study Modal Data
     const projectsData = {
@@ -164,19 +169,19 @@
         ],
         link: REPOS['mood-music']
       },
-      'weather-alert': {
-        category: 'ASYNC WEB APPLICATION',
-        title: 'Weather Alert Dashboard',
-        badges: ['NWS Weather API', 'Vite JS', 'Async / Await', 'Tailwind CSS'],
+      'task-manager': {
+        category: 'PYTHON TASK MANAGER',
+        title: 'Task Manager',
+        badges: ['Python', 'CLI', 'Input Validation', 'Task Tracking'],
         description: `
-          <p>A real-time weather advisory dashboard fetching severe meteorological alerts directly from the official National Weather Service public API.</p>
+          <p>A command-line task manager for creating, reviewing, completing, and deleting tasks with descriptions and due dates.</p>
         `,
         highlights: [
-          'Asynchronous JavaScript fetch routines with automated error boundary handling.',
-          'Clean status indicators for live regional advisory notifications.',
-          'Fast modern build pipeline powered by Vite.'
+          'Validates task titles, descriptions, and due dates.',
+          'Tracks pending and completed tasks and calculates completion progress.',
+          'Separates task operations and input validation into reusable Python modules.'
         ],
-        link: REPOS['weather-alert']
+        link: REPOS['task-manager']
       },
       'cinema-system': {
         category: 'SYSTEMS & PYTHON CLI',
@@ -192,18 +197,19 @@
         ],
         link: REPOS['cinema-system']
       },
-      'type-experiments': {
-        category: 'INTERACTIVE DESIGN LAB',
-        title: 'Typographic Experiments',
-        badges: ['JavaScript', 'HTML5 Canvas', 'Variable Fonts', 'CSS Motion'],
+      vetty: {
+        category: 'FULL-STACK PET-CARE MARKETPLACE',
+        title: 'Vetty',
+        badges: ['React', 'Flask', 'SQLite', 'Stripe', 'M-Pesa'],
         description: `
-          <p>An interactive browser playground exploring variable font axis manipulation, canvas particle physics, and kinetic UI interactions.</p>
+          <p>A mobile-first pet-care marketplace where customers can browse products and veterinary services, book appointments, and pay by card or M-Pesa.</p>
         `,
         highlights: [
-          'Real-time mouse cursor tracking driving dynamic font-weight interpolation.',
-          'Zero external framework dependencies.'
+          'React client backed by a Flask REST API and relational persistence.',
+          'Customer and administrator experiences with role-based access.',
+          'Checkout integrations for Stripe and Safaricom M-Pesa.'
         ],
-        link: REPOS['type-experiments']
+        link: REPOS.vetty
       }
     };
 
