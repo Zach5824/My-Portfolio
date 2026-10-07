@@ -1,0 +1,56 @@
+body {
+      background-color: #e6e6e2;
+      color: #1a1a1a;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .tight-heading {
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+    }
+
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+      animation: spinSlow 20s linear infinite;
+    }
+
+    .modal-backdrop {
+      background-color: rgba(26, 29, 30, 0.75);
+      backdrop-filter: blur(8px);
+    }
+
+    /* Page View Transitions */
+    .page-view {
+      display: none;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    
+    .page-view.active-page {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Tab active pill highlight */
+    .nav-tab.active-tab {
+      background-color: #1a1a1a;
+      color: #ffffff;
+      border-color: #1a1a1a;
+    }
+    .nav-tab.active-tab .tab-num {
+      color: #d2f535;
+    }
+  
+    :root { box-sizing: border-box; padding-bottom: env(safe-area-inset-bottom, 0px); }
+    html { scroll-padding-top: 6rem; }
+    header.sticky { padding-top: env(safe-area-inset-top, 0px); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+    @media (prefers-reduced-motion: reduce) { .marquee-track, .animate-spin-slow { animation: none; } }
+    button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #1a1a1a; outline-offset: 2px; }
